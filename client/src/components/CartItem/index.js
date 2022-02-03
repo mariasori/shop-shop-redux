@@ -7,31 +7,32 @@ const CartItem = ({ item }) => {
     const [, dispatch] = useStoreContext();
 
     const removeFromCart = item => {
-      dispatch({
-        type: REMOVE_FROM_CART,
-        _id: item._id
-      });
-      idbPromise('cart', 'delete', { ...item });
-    };
+        dispatch({
+          type: REMOVE_FROM_CART,
+          _id: item._id
+        });
+        idbPromise('cart', 'delete', { ...item });
+      };
 
     const onChange = (e) => {
         const value = e.target.value;
+      
         if (value === '0') {
-          dispatch({
-            type: REMOVE_FROM_CART,
-            _id: item._id
-          });
-        
-          idbPromise('cart', 'delete', { ...item });
-        } else {
-          dispatch({
-            type: UPDATE_CART_QUANTITY,
-            _id: item._id,
-            purchaseQuantity: parseInt(value)
-          });
-        
-          idbPromise('cart', 'put', { ...item, purchaseQuantity: parseInt(value) });
-        }
+            dispatch({
+              type: REMOVE_FROM_CART,
+              _id: item._id
+            });
+          
+            idbPromise('cart', 'delete', { ...item });
+          } else {
+            dispatch({
+              type: UPDATE_CART_QUANTITY,
+              _id: item._id,
+              purchaseQuantity: parseInt(value)
+            });
+          
+            idbPromise('cart', 'put', { ...item, purchaseQuantity: parseInt(value) });
+          }
       };
 
   return (
@@ -58,7 +59,7 @@ const CartItem = ({ item }) => {
             onClick={() => removeFromCart(item)}
             >
             🗑️
-         </span>
+            </span>
         </div>
       </div>
     </div>
