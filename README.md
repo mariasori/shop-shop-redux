@@ -16,7 +16,7 @@ An e-commerce website using React and Redux with Stripe payments.  After sign up
 [Click here](https://blooming-crag-61664.herokuapp.com/) to see the deployed application.
 
 ## Screenshot
-
+![image](https://user-images.githubusercontent.com/88404610/152280139-93c050e9-7767-4db9-91f3-39d5f6d37b84.png)
 
 ## Technologies
 - Javascript
